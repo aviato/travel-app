@@ -47,7 +47,7 @@ module.exports = {
   },
 
   getDestinations: function (req, res, next) {
-    var url = 'http://api.tripexpert.com/v1/destinations?'
+    var url = 'http://api.tripexpert.com/v1/destinations?';
     var limit = req.query.limit;
     request.get(url)
       .query({
@@ -59,7 +59,7 @@ module.exports = {
           return util.send500(res, err);
         }
         return res.status(200).send(response.body);
-      })
+      });
   },
 
   getVenues: function (req, res, next){

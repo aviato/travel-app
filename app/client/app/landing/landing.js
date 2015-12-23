@@ -8,7 +8,6 @@ angular.module('travel.landing', ['ngAnimate', 'ui.bootstrap'])
     if (!$rootScope.currentUser || !$rootScope.currentUser._id) return;
     // $rootScope.currentUser = $rootScope.currentUser || "anonymous";
     formInput = formInput.split(',')[0];
-    $rootScope.destinationPermalink;
     $scope.data.group = $scope.data.group || "anonymous";
 
     $scope.destinations.forEach(function (destination) {
@@ -16,9 +15,7 @@ angular.module('travel.landing', ['ngAnimate', 'ui.bootstrap'])
       if (destination.name === formInput) {
         $rootScope.destinationPermalink = destination.permalink;
         $rootScope.destination = destination;
-        $rootScope.destination.splash_photo = "http://static.tripexpert.com/images/destinations/splash_photos/index/" + destination.id + ".jpg"
-      } else {
-        console.log('error')
+        $rootScope.destination.splash_photo = "http://static.tripexpert.com/images/destinations/splash_photos/index/" + destination.id + ".jpg";
       }
     });
 

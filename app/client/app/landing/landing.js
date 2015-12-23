@@ -12,6 +12,7 @@ angular.module('travel.landing', ['ngAnimate', 'ui.bootstrap'])
     $scope.data.group = $scope.data.group || "anonymous";
 
     $scope.destinations.forEach(function (destination) {
+      // this probably needs to be destination.permalink
       if (destination.name === formInput) {
         $rootScope.destinationPermalink = destination.permalink;
         $rootScope.destination = destination;
@@ -44,6 +45,7 @@ angular.module('travel.landing', ['ngAnimate', 'ui.bootstrap'])
   };
 
   $scope.parseStateNames = function (permalink) {
+
     if (permalink.split('-').shift() === 'portland') {
       return permalink.split('-').pop().toUpperCase() + ' ';
     }

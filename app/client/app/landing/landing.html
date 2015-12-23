@@ -12,8 +12,7 @@
         <div class="form-group">
           <label for="destination-form">Destination</label>
           <input type="text" id="destination-form" placeholder="To" ng-model="selected" typeahead-min-length="2"
-          uib-typeahead="(destination.name + ', ' + parseStateNames(destination.permalink)
-          + destination.country_name.toUpperCase()) for destination in destinations | filter:$viewValue | limitTo:8"
+          uib-typeahead="(destination.name + ', ' + destination.country_name.toUpperCase()) for destination in destinations | filter:$viewValue | limitTo:8"
           class="form-control" autocomplete="off">
 
           <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>

@@ -3,7 +3,7 @@ angular.module('travel.results', ['ui.bootstrap', 'ngAnimate'])
 .controller('ResultsController', function ($scope, $window, $rootScope, $state, $uibModal, CurrentInfo, Venues, City, Groups, Util) {
   $scope.venues = [];
   $scope.filteredVenues = [];
-  $scope.city = null;
+  $scope.city = $rootScope.destination;
   $scope.heading = null;
   $scope.groups = [];
 

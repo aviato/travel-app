@@ -46,6 +46,22 @@ module.exports = {
     res.status(404).send();
   },
 
+  getDestinations: function (req, res, next) {
+    var url = 'http://api.tripexpert.com/v1/destinations?'
+    var limit = req.query.limit;
+    request.get(url)
+      .query({
+        limit: limit,
+        api_key: '5d8756782b4f32d2004e811695ced8b6'
+      })
+      .end(function (err, response) {
+        if (err) {
+          return util.send500(res, err);
+        }
+        return res.status(200).send(response.body);
+      })
+  },
+
   getVenues: function (req, res, next){
     var permalink = req.query.permalink;
     console.log(permalink);

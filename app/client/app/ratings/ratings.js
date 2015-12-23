@@ -4,7 +4,7 @@ angular.module('travel.ratings', [])
   var destination = $rootScope.destinationPermalink || CurrentInfo.destination.name;
   $scope.filteredUserRatings = [];
   $scope.filteredGroupRatings  = [];
-  $scope.city = null;
+  $scope.city = $rootScope.destination;
   $scope.heading = null;
   $scope.allVenuesRatings = [];
   $scope.groups = [];

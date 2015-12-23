@@ -178,6 +178,16 @@ angular.module('travel.services', [])
 
   ////////////////// PLACES TO EXPLORE //////////////////////
 
+  var getAllDestinations = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/dest/dests',
+      params: { limit: 375 }
+    }).then(function(res) {
+      console.log(res.data.response.destinations);
+      return res.data.response.destinations;
+    });
+  };
 
   /*
     @params {object} query has:
@@ -324,6 +334,7 @@ angular.module('travel.services', [])
 
 
   return {
+    getAllDestinations: getAllDestinations,
     getVenues: getVenues,
     getUserFavorites: getUserFavorites,
     addToUserFavorites: addToUserFavorites,
